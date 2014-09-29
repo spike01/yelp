@@ -9,7 +9,7 @@ describe 'Restaurants' do
     end
   end
 
-  context 'Added a restaurant' do
+  context 'Front page updating from none to one' do
     before do
       Restaurant.create(name: 'Nobu')
       end
@@ -20,7 +20,7 @@ describe 'Restaurants' do
     end
   end
 
-  context 'Created a new restaurant' do
+  context 'Creating a new restaurant' do
     it 'has a form that can be filled out' do
       visit '/restaurants'
       click_link 'Add a restaurant' 
@@ -56,6 +56,20 @@ describe 'Restaurants' do
     visit '/restaurants'
     click_link 'Delete The Fat Duck'
     expect(page).to have_content 'Restaurant deleted'
+    end
+  end
+
+  context 'Showing a description' do
+    before do
+      Restaurant.create(name: 'The Fat Duck',
+                        description: 'What did I just eat?')
+    end
+    it 'shows its description' do
+      visit '/restaurants'
+      click_link 'The Fat Duck'
+      expect(page).to have_content 'What did I just eat?'
+      click_link 'Return to restaurants'
+      expect(current_path).to eq '/restaurants'
     end
   end
 end
