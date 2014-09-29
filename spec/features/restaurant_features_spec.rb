@@ -19,5 +19,17 @@ describe 'Restaurants' do
       expect(page).not_to have_content 'No restaurants found'
     end
   end
+
+  context 'Created a new restaurant' do
+    it 'has a form that can be filled out' do
+      visit '/restaurants'
+      click_link 'Add a restaurant' 
+      fill_in 'Name', with: 'Galvin la Chappelle'
+      fill_in 'Description', with: 'Bare banging food bruv. Would spit at again'
+      click_button 'Submit restaurant'
+      expect(page).to have_content 'Galvin la Chappelle'
+      expect(current_path).to eq '/restaurants'
+    end
+  end
 end
 
