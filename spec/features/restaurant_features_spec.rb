@@ -32,14 +32,20 @@ describe 'Restaurants' do
     end
 
     it 'cannot create a restaurant with a name that is less than 3 chars' do
-      visit '/restaurants'
-      click_link 'Add a restaurant'
+      visit '/restaurants/new'
       fill_in 'Name', with: 'Th'
       click_button 'Submit restaurant'
       expect(page).not_to have_css 'h2', text: 'Th'
-      expect(page).to have_content 'error'
+      expect(page).to have_content 'The restaurant name is too short'
     end
       
+    it 'can only create restaurants with unique names' do
+      Restaurant.create(name: 'The Fat Duck')
+      visit '/restaurants/new'
+      fill_in 'Name', with: 'The Fat Duck'
+      click_button 'Submit restaurant'
+      expect(page).to have_content 'Restaurants must have a unique name'
+    end 
   end
 
   context 'Updating a restaurant' do
