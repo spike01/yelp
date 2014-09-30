@@ -68,6 +68,7 @@ describe 'Restaurants' do
       visit '/restaurants'
       click_link 'The Fat Duck'
       expect(page).to have_content 'What did I just eat?'
+      expect(current_path).to match /restaurants\/\d/ 
       click_link 'Return to restaurants'
       expect(current_path).to eq '/restaurants'
     end

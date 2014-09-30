@@ -2,4 +2,9 @@
 
 =@restaurant.description
 
+-@restaurant.reviews.each do |review|
+  %ul
+    %li #{review.review}, Rating: #{review.rating}
+
+
 =link_to "Return to restaurants", restaurants_path
