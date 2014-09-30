@@ -30,6 +30,16 @@ describe 'Restaurants' do
       expect(page).to have_content 'Galvin la Chappelle'
       expect(current_path).to eq '/restaurants'
     end
+
+    it 'cannot create a restaurant with a name that is less than 3 chars' do
+      visit '/restaurants'
+      click_link 'Add a restaurant'
+      fill_in 'Name', with: 'Th'
+      click_button 'Submit restaurant'
+      expect(page).not_to have_css 'h2', text: 'Th'
+      expect(page).to have_content 'error'
+    end
+      
   end
 
   context 'Updating a restaurant' do

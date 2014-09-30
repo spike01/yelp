@@ -32,7 +32,7 @@ gem 'spring',        group: :development
 # Test suite
 gem 'rspec-rails', group: :test
 gem 'capybara', group: :test
-#gem 'cucumber-rails', group: :test
+gem 'rspec-collection_matchers', group: :test
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

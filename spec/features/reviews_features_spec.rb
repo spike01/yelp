@@ -14,10 +14,18 @@ describe 'Reviews' do
       select '5', from: 'Rating' 
       click_button 'Leave review'
       expect(current_path).to eq '/restaurants'
-      click_link 'The Fat Duck'
       expect(page).to have_content 'Expensive foodgasm'
       expect(page).to have_content 'Rating: 5'
+    end
+
+    xit 'review appears on show page' do
+      review = Restaurant.first.reviews
+      review.update(review: 'Expensive foodgasm',
+                        rating: 5)
+      click_link 'The Fat Duck'
       expect(current_path).to match /restaurants\/\d/ 
+      expect(page).to have_content 'Expensive foodgasm'
+      expect(page).to have_content 'Rating: 5'
     end
   end
 end
