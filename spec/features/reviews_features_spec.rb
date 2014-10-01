@@ -18,10 +18,11 @@ describe 'Reviews' do
       expect(page).to have_content 'Rating: 5'
     end
 
-    xit 'review appears on show page' do
+    it 'review appears on show page' do
       review = Restaurant.first.reviews
-      review.update(review: 'Expensive foodgasm',
+      review.create(review: 'Expensive foodgasm',
                         rating: 5)
+      visit '/restaurants'
       click_link 'The Fat Duck'
       expect(current_path).to match /restaurants\/\d/ 
       expect(page).to have_content 'Expensive foodgasm'
