@@ -4,7 +4,7 @@
 
 -@restaurant.reviews.each do |review|
   %ul
-    %li #{review.review}. Rating: #{review.rating}
+    %li #{review.review}. Rating: #{review.rating} posted about #{time_ago_in_words(review.created_at)} ago
 
 
 =link_to "Return to restaurants", restaurants_path

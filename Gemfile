@@ -24,8 +24,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+# my Gems
 gem 'haml-rails'
-
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
@@ -33,6 +36,9 @@ gem 'spring',        group: :development
 gem 'rspec-rails', group: :test
 gem 'capybara', group: :test
 gem 'rspec-collection_matchers', group: :test
+gem 'poltergeist', group: :test
+gem 'database_cleaner', group: :test
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
