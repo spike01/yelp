@@ -12,7 +12,6 @@ describe 'User accounts' do
       visit '/users/sign_up'
     end      
   end
-
   
   context 'Twitter sign in' do
     it 'can sign in with Twitter' do
