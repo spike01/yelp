@@ -206,10 +206,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   omniauth
-<<<<<<< HEAD
   omniauth-facebook
-=======
->>>>>>> d82f67231c8ce1e422b6b05b26a486fb3964c0e5
   omniauth-twitter
   pg
   poltergeist
