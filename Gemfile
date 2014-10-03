@@ -29,11 +29,8 @@ gem 'haml-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
-<<<<<<< HEAD
 gem 'omniauth-facebook'
 
-=======
->>>>>>> d82f67231c8ce1e422b6b05b26a486fb3964c0e5
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
