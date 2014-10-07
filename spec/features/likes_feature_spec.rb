@@ -6,9 +6,9 @@ describe 'Liking reviews' do
     restaurant.reviews.create(rating: 3, review: 'Still reppin fo dem fishies all across the world')
   end
 
-  xit 'users can like reviews, with an ascending like count' do
+  it 'users can say that a review is useful with an ascending useful count' do
     visit '/restaurants'
-    click_link 'Like'
-    expect(page).to have_content('1 like')
+    click_link 'Useful'
+    expect(page).to have_content('Useful 1')
   end
 end

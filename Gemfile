@@ -35,12 +35,13 @@ gem 'omniauth-facebook'
 gem 'spring',        group: :development
 
 # Test suite
-gem 'rspec-rails', group: :test
-gem 'capybara', group: :test
-gem 'rspec-collection_matchers', group: :test
-gem 'poltergeist', group: :test
-gem 'database_cleaner', group: :test
-
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'rspec-collection_matchers'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
